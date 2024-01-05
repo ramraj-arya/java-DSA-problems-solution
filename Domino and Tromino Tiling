@@ -42,3 +42,25 @@ class Solution {
         return t[n] = (2*solve(n-1, t)%m + solve(n-3, t)%m)%m;
     }
 }
+
+
+alternate:
+class Solution {
+    int m = 1000000007;
+
+    public int numTilings(int n) {
+        if (n == 1 || n == 2) {
+            return n;
+        }
+        int[] t = new int[n + 1];
+        t[1] = 1;
+        t[2] = 2;
+        t[3] = 5;
+
+        for (int i = 4; i <= n; i++) {
+            t[i] = (2 * t[i - 1] % m + t[i - 3] % m) % m;
+        }
+
+        return t[n];
+    }
+}
