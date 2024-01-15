@@ -24,7 +24,7 @@ n == nums.length
 Follow-up: Could you solve the problem in linear time and in O(1) space?
 class Solution {
     public int majorityElement(int[] nums) {
-        // voting algorithm
+        // moorey voting algorithm
         int cand = 0;
         int count = 0;
         for(int i = 0; i < nums.length; i++) {
